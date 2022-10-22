@@ -55,7 +55,7 @@ onMounted(async () => {
             <tbody class="tbody table__tbody">
               <tr class="tr tbody_tr">
                 <td class="td tr__td">
-                  {{ format(new Date(data.dt), "MM/dd/Y") }}
+                  {{ format(new Date(data.dt * 1000), "MM/dd/Y") }}
                 </td>
                 <td class="td tr__td">{{ data.main.temp }}</td>
                 <td class="td tr__td td_sm_hide">
