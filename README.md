@@ -1,6 +1,17 @@
 # weather-forecast
 
-This template should help get you started developing with Vue 3 in Vite.
+Create a simple application for the city's weather data.
+
+## Technology used
+1. [VueJS](https://vuejs.org)
+2. [OAuth0](https://auth0.com) + [GitHub](https://github.com)
+3. [OpenWeather API](https://openweathermap.org)
+
+### Library used
+1. [vue-router](https://router.vuejs.org/)
+2. [@auth0/auth0-vue](https://www.npmjs.com/package/@auth0/auth0-vue)
+3. [axios](https://www.npmjs.com/package/axios)
+4. [date-fns](https://date-fns.org)
 
 ## Recommended IDE Setup
 
@@ -31,6 +42,12 @@ npm install
 
 ```sh
 npm run dev
+```
+
+### Expose the app to the internet (So we can use the OAuth0 + GitHub login in local)
+
+```sh
+npx lt --port 5173 --subdomain weather-forecast-hiramis
 ```
 
 ### Type-Check, Compile and Minify for Production
