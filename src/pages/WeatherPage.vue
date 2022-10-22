@@ -69,7 +69,7 @@ onMounted(async () => {
             </tbody>
           </table>
           <div class="actions">
-            <button class="button actions__button">Back</button>
+            <button class="button actions__button" @click="router.push('/')">Back</button>
           </div>
         </template>
         <div v-else>No Data</div>
