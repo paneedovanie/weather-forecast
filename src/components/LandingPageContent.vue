@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useAuth0 } from '@auth0/auth0-vue';
-import { toRefs } from 'vue';
-const { loginWithRedirect, user, isAuthenticated } = useAuth0();
+import { useAuth0 } from "@auth0/auth0-vue";
+const { loginWithRedirect } = useAuth0();
 </script>
 
 <template>
@@ -11,7 +10,9 @@ const { loginWithRedirect, user, isAuthenticated } = useAuth0();
       Github user to use the application and view the weather in your city
     </p>
 
-    <button class="button content__button" @click="loginWithRedirect">Login</button>
+    <button class="button content__button" @click="loginWithRedirect">
+      Login
+    </button>
   </div>
 </template>
 

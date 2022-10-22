@@ -2,7 +2,7 @@
 import { useAuth0 } from "@auth0/auth0-vue";
 import LandingPageContent from "../components/LandingPageContent.vue";
 import HomePageContent from "../components/HomePageContent.vue";
-const { isAuthenticated } = useAuth0()
+const { isAuthenticated } = useAuth0();
 </script>
 
 <template>
