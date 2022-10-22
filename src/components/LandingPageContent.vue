@@ -10,7 +10,7 @@ const { loginWithRedirect } = useAuth0();
       Github user to use the application and view the weather in your city
     </p>
 
-    <button class="button content__button" @click="loginWithRedirect">
+    <button class="button button_primary content__button" @click="loginWithRedirect">
       Login
     </button>
   </div>

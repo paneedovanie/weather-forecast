@@ -24,7 +24,7 @@ const { isAuthenticated, logout } = useAuth0();
       </nav>
 
       <template v-if="isAuthenticated">
-        <button @click="logout({ returnTo: config.baseUrl })">Logout</button>
+        <button class="button button_secondary" @click="logout({ returnTo: config.baseUrl })">Logout</button>
       </template>
     </div>
   </header>
@@ -32,7 +32,7 @@ const { isAuthenticated, logout } = useAuth0();
 
 <style scoped>
 .header {
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px var(--color-shadow);
 }
 .header__inner {
   display: flex;
@@ -56,5 +56,9 @@ const { isAuthenticated, logout } = useAuth0();
 }
 .nav__link {
   text-decoration: none;
+  color: var(--color-secondary);
+}
+.logo__title {
+  color: var(--color-primary);
 }
 </style>

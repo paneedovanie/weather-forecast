@@ -24,7 +24,7 @@ const showWeather = () => {
       <div class="input search__input">
         <input placeholder="City" v-model="city" />
       </div>
-      <button @click="showWeather">Display Weather</button>
+      <button class="button button_primary" @click="showWeather">Display Weather</button>
     </div>
   </div>
 </template>
