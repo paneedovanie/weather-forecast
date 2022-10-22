@@ -4,8 +4,10 @@ import { onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { getWeather } from "../lib/weatherApi";
 import Loader from "../components/Loader.vue";
-import { format } from 'date-fns'
+import { format } from "date-fns";
+import { useAuth0 } from "@auth0/auth0-vue";
 
+const { isAuthenticated } = useAuth0();
 const router = useRouter();
 const route = useRoute();
 const data = ref<any>();
@@ -13,11 +15,12 @@ const isLoading = ref(false);
 
 onMounted(async () => {
   isLoading.value = true;
+  if (!isAuthenticated.value) return router.push("/");
   const city = route.query.q as string;
   if (!city || city === "") {
     alert("Please provide a city");
     router.push("/");
-    return
+    return;
   }
 
   try {
@@ -59,9 +62,13 @@ onMounted(async () => {
             </thead>
             <tbody class="tbody table__tbody">
               <tr class="tr tbody_tr">
-                <td class="td tr__td">{{ format(new Date(data.dt), 'MM/dd/Y') }}</td>
+                <td class="td tr__td">
+                  {{ format(new Date(data.dt), "MM/dd/Y") }}
+                </td>
                 <td class="td tr__td">{{ data.main.temp }}</td>
-                <td class="td tr__td td_sm_hide">{{ data.weather[0].description }}</td>
+                <td class="td tr__td td_sm_hide">
+                  {{ data.weather[0].description }}
+                </td>
                 <td class="td tr__td td_sm_hide">{{ data.weather[0].main }}</td>
                 <td class="td tr__td td_sm_hide">{{ data.main.pressure }}</td>
                 <td class="td tr__td td_sm_hide">{{ data.main.humidity }}</td>
@@ -69,7 +76,9 @@ onMounted(async () => {
             </tbody>
           </table>
           <div class="actions">
-            <button class="button actions__button" @click="router.push('/')">Back</button>
+            <button class="button actions__button" @click="router.push('/')">
+              Back
+            </button>
           </div>
         </template>
         <div v-else>No Data</div>
@@ -111,8 +120,9 @@ onMounted(async () => {
   justify-content: right;
 }
 @media screen and (max-width: 480px) {
-  .th_sm_hide, .td_sm_hide {
+  .th_sm_hide,
+  .td_sm_hide {
     display: none;
   }
-} 
+}
 </style>
