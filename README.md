@@ -1,36 +1,17 @@
 # weather-forecast
 
-Create a simple application for the city's weather data.
+Create a simple application for retrieving the city's weather data.
 
 ## Technology used
-1. [VueJS](https://vuejs.org)
-2. [OAuth0](https://auth0.com) + [GitHub](https://github.com)
-3. [OpenWeather API](https://openweathermap.org)
+1. [VueJS](https://vuejs.org) - JS Framework used to make UI
+2. [OAuth0](https://auth0.com) + [GitHub](https://github.com) - Used for login
+3. [OpenWeather API](https://openweathermap.org) - Source of weather data
 
-### Library used
-1. [vue-router](https://router.vuejs.org/)
-2. [@auth0/auth0-vue](https://www.npmjs.com/package/@auth0/auth0-vue)
-3. [axios](https://www.npmjs.com/package/axios)
-4. [date-fns](https://date-fns.org)
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Dependencies
+1. [vue-router](https://router.vuejs.org/) - For creating SPA
+2. [@auth0/auth0-vue](https://www.npmjs.com/package/@auth0/auth0-vue) - Library that helps us used 0Auth0 API
+3. [axios](https://www.npmjs.com/package/axios) - Used for making request
+4. [date-fns](https://date-fns.org) - To easily format date
 
 ## Project Setup
 
@@ -44,7 +25,7 @@ npm install
 npm run dev
 ```
 
-### Expose the app to the internet (So we can use the OAuth0 + GitHub login in local)
+### Expose the app to the internet (So we can use the OAuth0 + GitHub login)
 
 ```sh
 npx lt --port 5173 --subdomain weather-forecast-hiramis
