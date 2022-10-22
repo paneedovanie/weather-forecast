@@ -10,7 +10,21 @@ import { useAuth0 } from "@auth0/auth0-vue";
 const { isAuthenticated } = useAuth0();
 const router = useRouter();
 const route = useRoute();
-const data = ref<any>();
+const data = ref<{
+  dt: number;
+  main: {
+    pressure: number;
+    humidity: number;
+    temp: number;
+  };
+  name: string;
+  weather: {
+    description: string;
+    icon: string;
+    id: number;
+    main: string;
+  }[];
+}>();
 const isLoading = ref(false);
 
 onMounted(async () => {
