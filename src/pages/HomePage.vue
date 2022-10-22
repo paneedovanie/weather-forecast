@@ -1,9 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LandingPageContent from "../components/LandingPageContent.vue";</script>
 
 <template>
   <main class="main">
     <div class="main__inner">
-      <h1>Home Page</h1>
+      <LandingPageContent />
     </div>
   </main>
 </template>
