@@ -17,7 +17,7 @@ const { isAuthenticated } = useAuth0();
 <style scoped>
 .main {
   background-image: linear-gradient(to left, #aaa, #aaa),
-    url("/src/assets/clouds.jpg");
+    url("/src/assets/images/clouds.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: overlay;
