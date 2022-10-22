@@ -2,12 +2,10 @@
 import type { AxiosError } from "axios";
 import { onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { getWeather } from "../lib/weatherApi";
-import Loader from "../components/Loader.vue";
+import { getWeather } from "../lib/api";
+import Loader from "@/components/Loader.vue";
 import { format } from "date-fns";
-import { useAuth0 } from "@auth0/auth0-vue";
 
-const { isAuthenticated } = useAuth0();
 const router = useRouter();
 const route = useRoute();
 const data = ref<{
@@ -29,7 +27,6 @@ const isLoading = ref(false);
 
 onMounted(async () => {
   isLoading.value = true;
-  if (!isAuthenticated.value) return router.push("/");
   const city = route.query.q as string;
   if (!city || city === "") {
     alert("Please provide a city");
