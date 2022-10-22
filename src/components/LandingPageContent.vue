@@ -1,13 +1,22 @@
+<script setup lang="ts">
+import { useAuth0 } from '@auth0/auth0-vue';
+import { toRefs } from 'vue';
+const { loginWithRedirect, user, isAuthenticated } = useAuth0();
+console.log(user, isAuthenticated)
+</script>
+
 <template>
   <div class="content">
     <p class="text content__text">
       Welcome to the weather forecast web application. Please login with your
       Github user to use the application and view the weather in your city
     </p>
+    {{ JSON.stringify(user) }}
+    {{ isAuthenticated }}
 
-    <button class="button content__button">Login</button>
+    <button class="button content__button" @click="loginWithRedirect">Login</button>
   </div>
-</template>;
+</template>
 
 <style scoped>
 .content {

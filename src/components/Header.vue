@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { app } from "@/constant/app";
+import { config } from "@/constant/config";
 import { RouterLink } from "vue-router";
 </script>
 
@@ -14,7 +14,7 @@ import { RouterLink } from "vue-router";
           width="60"
           height="60"
         />
-        <h3 class="title logo__title">{{ app.title }}</h3>
+        <h3 class="title logo__title">{{ config.title }}</h3>
       </RouterLink>
 
       <nav class="nav">
