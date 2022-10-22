@@ -91,12 +91,20 @@ onMounted(async () => {
   border-collapse: collapse;
   border: 2px solid black;
   margin-bottom: 72px;
+  box-shadow: 0 3px 5px var(--color-shadow);
 }
 .table__thead {
   text-align: left;
 }
+.thead__tr {
+  background-color: var(--color-shadow);
+}
+.tr__th {
+  color: var(--color-primary);
+}
 .tr__td {
   text-transform: capitalize;
+  color: var(--color-police-blue);
 }
 .tr__th,
 .tr__td {
