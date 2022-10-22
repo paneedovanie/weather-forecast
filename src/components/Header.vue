@@ -19,7 +19,7 @@ const { isAuthenticated, logout } = useAuth0();
         <h3 class="title logo__title">{{ config.title }}</h3>
       </RouterLink>
 
-      <nav class="nav">
+      <nav class="nav nav_sm_hide">
         <RouterLink class="link nav__link" to="/">Home</RouterLink>
       </nav>
 
@@ -60,5 +60,10 @@ const { isAuthenticated, logout } = useAuth0();
 }
 .logo__title {
   color: var(--color-primary);
+}
+@media screen and (max-width: 480px) {
+  .nav_sm_hide {
+    display: none;
+  }
 }
 </style>
