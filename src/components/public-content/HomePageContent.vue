@@ -2,7 +2,7 @@
 import { useAuth0 } from "@auth0/auth0-vue";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import MagnifyingGlass from "./icons/MagnifyingGlass.vue";
+import MagnifyingGlass from "../icons/MagnifyingGlass.vue";
 const { user } = useAuth0();
 const router = useRouter();
 const city = ref("");

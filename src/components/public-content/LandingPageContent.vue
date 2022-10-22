@@ -31,11 +31,11 @@ const { loginWithRedirect } = useAuth0();
 .content__heading {
   font-size: 24px;
   font-weight: bold;
-  color: var(--color-primary)
+  color: var(--color-primary);
 }
 .content__description {
   font-size: 12px;
   margin-bottom: 32px;
-  color: var(--color-secondary)
+  color: var(--color-secondary);
 }
 </style>

@@ -24,7 +24,12 @@ const { isAuthenticated, logout } = useAuth0();
       </nav>
 
       <template v-if="isAuthenticated">
-        <button class="button button_secondary" @click="logout({ returnTo: config.baseUrl })">Logout</button>
+        <button
+          class="button button_secondary"
+          @click="logout({ returnTo: config.baseUrl })"
+        >
+          Logout
+        </button>
       </template>
     </div>
   </header>
