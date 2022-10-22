@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import LandingPageContent from "../components/LandingPageContent.vue";</script>
+import { useAuth0 } from "@auth0/auth0-vue";
+import LandingPageContent from "../components/LandingPageContent.vue";
+import HomePageContent from "../components/HomePageContent.vue";
+const { isAuthenticated } = useAuth0()
+</script>
 
 <template>
   <main class="main">
     <div class="main__inner">
-      <LandingPageContent />
+      <HomePageContent v-if="isAuthenticated" />
+      <LandingPageContent v-else />
     </div>
   </main>
 </template>
