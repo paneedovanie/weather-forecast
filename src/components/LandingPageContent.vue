@@ -5,12 +5,18 @@ const { loginWithRedirect } = useAuth0();
 
 <template>
   <div class="content">
-    <p class="text content__text">
-      Welcome to the weather forecast web application. Please login with your
-      Github user to use the application and view the weather in your city
+    <p class="heading content__heading">
+      Welcome to the weather forecast web application.
+    </p>
+    <p class="description content__description">
+      Please login with your Github user to use the application and view the
+      weather in your city
     </p>
 
-    <button class="button button_primary content__button" @click="loginWithRedirect">
+    <button
+      class="button button_primary content__button"
+      @click="loginWithRedirect"
+    >
       Login
     </button>
   </div>
@@ -22,7 +28,14 @@ const { loginWithRedirect } = useAuth0();
   max-width: 512px;
   margin-inline: auto;
 }
-.content__text {
+.content__heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-primary)
+}
+.content__description {
+  font-size: 12px;
   margin-bottom: 32px;
+  color: var(--color-secondary)
 }
 </style>
