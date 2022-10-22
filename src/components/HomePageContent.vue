@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { useAuth0 } from "@auth0/auth0-vue";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 const { user } = useAuth0();
+const router = useRouter();
+const city = ref("");
+const showWeather = () => {
+  router.push(`/weather?q=${city.value}`);
+};
 </script>
 
 <template>
@@ -15,9 +22,9 @@ const { user } = useAuth0();
     </div>
     <div class="search content__search">
       <div class="input search__input">
-        <input placeholder="City" />
+        <input placeholder="City" v-model="city" />
       </div>
-      <button>Display Weather</button>
+      <button @click="showWeather">Display Weather</button>
     </div>
   </div>
 </template>
@@ -27,25 +34,25 @@ const { user } = useAuth0();
   margin-top: 64px;
   max-width: 512px;
   margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .content__user {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 64px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 64px;
 }
 .user__name {
   text-transform: capitalize;
   margin: 0;
 }
 .content__search {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 </style>
