@@ -12,7 +12,7 @@ const { isAuthenticated, logout } = useAuth0();
         <img
           alt="Vue logo"
           class="image logo__image"
-          src="@/assets/logo.svg"
+          src="@/assets/svgs/logo.svg"
           width="60"
           height="60"
         />
