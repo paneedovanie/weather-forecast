@@ -43,31 +43,34 @@ onMounted(async () => {
               <tr class="tr thead__tr">
                 <th class="th tr__th">Date</th>
                 <th class="th tr__th"></th>
-                <th class="th tr__th"></th>
-                <th class="th tr__th"></th>
-                <th class="th tr__th"></th>
-                <th class="th tr__th"></th>
+                <th class="th tr__th th_sm_hide"></th>
+                <th class="th tr__th th_sm_hide"></th>
+                <th class="th tr__th th_sm_hide"></th>
+                <th class="th tr__th th_sm_hide"></th>
               </tr>
               <tr class="tr thead__tr">
                 <th class="th tr__th">(mm/dd/yyyy)</th>
                 <th class="th tr__th">Temp(F)</th>
-                <th class="th tr__th">Description</th>
-                <th class="th tr__th">Main</th>
-                <th class="th tr__th">Pressure</th>
-                <th class="th tr__th">Humidity</th>
+                <th class="th tr__th th_sm_hide">Description</th>
+                <th class="th tr__th th_sm_hide">Main</th>
+                <th class="th tr__th th_sm_hide">Pressure</th>
+                <th class="th tr__th th_sm_hide">Humidity</th>
               </tr>
             </thead>
             <tbody class="tbody table__tbody">
               <tr class="tr tbody_tr">
                 <td class="td tr__td">{{ format(new Date(data.dt), 'MM/dd/Y') }}</td>
                 <td class="td tr__td">{{ data.main.temp }}</td>
-                <td class="td tr__td">{{ data.weather[0].description }}</td>
-                <td class="td tr__td">{{ data.weather[0].main }}</td>
-                <td class="td tr__td">{{ data.main.pressure }}</td>
-                <td class="td tr__td">{{ data.main.humidity }}</td>
+                <td class="td tr__td td_sm_hide">{{ data.weather[0].description }}</td>
+                <td class="td tr__td td_sm_hide">{{ data.weather[0].main }}</td>
+                <td class="td tr__td td_sm_hide">{{ data.main.pressure }}</td>
+                <td class="td tr__td td_sm_hide">{{ data.main.humidity }}</td>
               </tr>
             </tbody>
           </table>
+          <div class="actions">
+            <button class="button actions__button">Back</button>
+          </div>
         </template>
         <div v-else>No Data</div>
       </template>
@@ -86,6 +89,7 @@ onMounted(async () => {
   width: 100%;
   border-collapse: collapse;
   border: 2px solid black;
+  margin-bottom: 72px;
 }
 .table__thead {
   text-align: left;
@@ -102,4 +106,13 @@ onMounted(async () => {
 .tr__td:last-child {
   border-right: 2px solid black;
 }
+.actions {
+  display: flex;
+  justify-content: right;
+}
+@media screen and (max-width: 480px) {
+  .th_sm_hide, .td_sm_hide {
+    display: none;
+  }
+} 
 </style>
