@@ -14,6 +14,11 @@ const router = createRouter({
       name: "weather-page",
       component: () => import("../pages/WeatherPage.vue"),
     },
+    // # Redirect user to home/landing page when accessing unknown route
+    {
+      path: "/:pathMatch(.*)",
+      redirect: "/",
+    },
   ],
 });
 
