@@ -27,16 +27,18 @@ const showWeather = () => {
         >https://github.com/{{ user.nickname }}</a
       >
     </div>
-    <div class="search content__search">
-      <div class="input search__input">
-        <MagnifyingGlass />
-        <input placeholder="City" v-model="city" class="field input_field" />
+    <form @submit.prevent="showWeather">
+      <div class="search content__search">
+        <div class="input search__input">
+          <MagnifyingGlass />
+          <input placeholder="City" v-model="city" class="field input_field" />
+        </div>
+        <div v-if="error" class="error">{{ error }}</div>
+        <button class="button button_primary" type="submit">
+          Display Weather
+        </button>
       </div>
-      <div v-if="error" class="error">{{ error }}</div>
-      <button class="button button_primary" @click="showWeather">
-        Display Weather
-      </button>
-    </div>
+    </form>
   </div>
 </template>
 
