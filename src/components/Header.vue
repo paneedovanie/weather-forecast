@@ -21,9 +21,6 @@ const { isAuthenticated, logout } = useAuth0();
 
       <nav class="nav">
         <RouterLink class="link nav__link" to="/">Home</RouterLink>
-        <template v-if="isAuthenticated">
-          <RouterLink class="link nav__link" to="/weather">Weather</RouterLink>
-        </template>
       </nav>
 
       <template v-if="isAuthenticated">
