@@ -1,1 +1,31 @@
 @import './base.css';
+
+.button {
+  padding: 8px 16px;
+  border: 0;
+  box-shadow: 0 3px 5px var(--color-shadow);
+  border-radius: 8px;
+}
+
+.button:active {
+  box-shadow: none;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button_primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.button_secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.error {
+  color: var(--color-red);
+  font-size: 12px;
+}

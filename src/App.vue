@@ -2,8 +2,8 @@
 import { useAuth0 } from "@auth0/auth0-vue";
 import { RouterView } from "vue-router";
 import Header from "./components/Header.vue";
-import Loader from './components/Loader.vue'
-const { isLoading} = useAuth0()
+import Loader from "./components/Loader.vue";
+const { isLoading } = useAuth0();
 </script>
 
 <template>

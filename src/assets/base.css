@@ -1,7 +1,24 @@
 /* color palette from <https://github.com/vuejs/theme> */
 
-body {
+:root {
+  --color-cool-black: #002B5B;
+  --color-police-blue: #2B4865;
+  --color-teal-blue: #256D85;
+  --color-arsenic: #393f4830;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-red: #a52424;
+}
+
+:root {
+  --color-primary: var(--color-cool-black);
+  --color-secondary: var(--color-teal-blue);
+  --color-shadow: var(--color-arsenic);
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
