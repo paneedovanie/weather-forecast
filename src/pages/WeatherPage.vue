@@ -44,15 +44,7 @@ onMounted(async () => {
           <table class="table">
             <thead class="thead table__thead">
               <tr class="tr thead__tr">
-                <th class="th tr__th">Date</th>
-                <th class="th tr__th"></th>
-                <th class="th tr__th th_sm_hide"></th>
-                <th class="th tr__th th_sm_hide"></th>
-                <th class="th tr__th th_sm_hide"></th>
-                <th class="th tr__th th_sm_hide"></th>
-              </tr>
-              <tr class="tr thead__tr">
-                <th class="th tr__th">(mm/dd/yyyy)</th>
+                <th class="th tr__th">Date (mm/dd/yyyy)</th>
                 <th class="th tr__th">Temp(F)</th>
                 <th class="th tr__th th_sm_hide">Description</th>
                 <th class="th tr__th th_sm_hide">Main</th>
