@@ -55,32 +55,34 @@ onMounted(async () => {
       <Loader v-if="isLoading" />
       <template v-else>
         <template v-if="data">
-          <table class="table">
-            <thead class="thead table__thead">
-              <tr class="tr thead__tr">
-                <th class="th tr__th">Date (mm/dd/yyyy)</th>
-                <th class="th tr__th">Temp(F)</th>
-                <th class="th tr__th th_sm_hide">Description</th>
-                <th class="th tr__th th_sm_hide">Main</th>
-                <th class="th tr__th th_sm_hide">Pressure</th>
-                <th class="th tr__th th_sm_hide">Humidity</th>
-              </tr>
-            </thead>
-            <tbody class="tbody table__tbody">
-              <tr class="tr tbody_tr">
-                <td class="td tr__td">
-                  {{ format(new Date(data.dt * 1000), "MM/dd/Y") }}
-                </td>
-                <td class="td tr__td">{{ data.main.temp }}</td>
-                <td class="td tr__td td_sm_hide">
-                  {{ data.weather[0].description }}
-                </td>
-                <td class="td tr__td td_sm_hide">{{ data.weather[0].main }}</td>
-                <td class="td tr__td td_sm_hide">{{ data.main.pressure }}</td>
-                <td class="td tr__td td_sm_hide">{{ data.main.humidity }}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table_container">
+            <table class="table">
+              <thead class="thead table__thead">
+                <tr class="tr thead__tr">
+                  <th class="th tr__th">Date (mm/dd/yyyy)</th>
+                  <th class="th tr__th">Temp(F)</th>
+                  <th class="th tr__th th_sm_hide">Description</th>
+                  <th class="th tr__th th_sm_hide">Main</th>
+                  <th class="th tr__th th_sm_hide">Pressure</th>
+                  <th class="th tr__th th_sm_hide">Humidity</th>
+                </tr>
+              </thead>
+              <tbody class="tbody table__tbody">
+                <tr class="tr tbody_tr">
+                  <td class="td tr__td">
+                    {{ format(new Date(data.dt * 1000), "MM/dd/Y") }}
+                  </td>
+                  <td class="td tr__td">{{ data.main.temp }}</td>
+                  <td class="td tr__td td_sm_hide">
+                    {{ data.weather[0].description }}
+                  </td>
+                  <td class="td tr__td td_sm_hide">{{ data.weather[0].main }}</td>
+                  <td class="td tr__td td_sm_hide">{{ data.main.pressure }}</td>
+                  <td class="td tr__td td_sm_hide">{{ data.main.humidity }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <div class="actions">
             <button class="button actions__button" @click="router.push('/')">
               Back
@@ -100,12 +102,16 @@ onMounted(async () => {
   padding: 8px;
   margin-top: 64px;
 }
+.table_container {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 72px;
+  box-shadow: 0 3px 5px var(--color-shadow);
+}
 .table {
   width: 100%;
   border-collapse: collapse;
   border: 2px solid black;
-  margin-bottom: 72px;
-  box-shadow: 0 3px 5px var(--color-shadow);
 }
 .table__thead {
   text-align: left;
