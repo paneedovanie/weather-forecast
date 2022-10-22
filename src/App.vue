@@ -1,12 +1,17 @@
 <script setup lang="ts">
+import { useAuth0 } from "@auth0/auth0-vue";
 import { RouterView } from "vue-router";
 import Header from "./components/Header.vue";
+import Loader from './components/Loader.vue'
+const { isLoading} = useAuth0()
 </script>
 
 <template>
-  <Header />
-
-  <RouterView />
+  <Loader v-if="isLoading" />
+  <template v-else>
+    <Header />
+    <RouterView />
+  </template>
 </template>
 
 <style scoped></style>

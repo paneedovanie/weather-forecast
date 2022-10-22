@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { config } from "@/constant/config";
+import { useAuth0 } from "@auth0/auth0-vue";
 import { RouterLink } from "vue-router";
+const { isAuthenticated, logout } = useAuth0();
 </script>
 
 <template>
@@ -21,6 +23,10 @@ import { RouterLink } from "vue-router";
         <RouterLink class="link nav__link" to="/">Home</RouterLink>
         <RouterLink class="link nav__link" to="/weather">Weather</RouterLink>
       </nav>
+
+      <template v-if="isAuthenticated">
+        <button @click="logout({ returnTo: config.baseUrl })">Logout</button>
+      </template>
     </div>
   </header>
 </template>
@@ -41,6 +47,7 @@ import { RouterLink } from "vue-router";
   display: flex;
   align-items: center;
   gap: 8px;
+  flex: 1;
 }
 .nav__logo {
   text-decoration: none;
